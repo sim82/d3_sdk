@@ -14,6 +14,39 @@ ExternalProject_Add(
             -DCMAKE_INSTALL_RPATH=${SDK_INSTALL_PREFIX}/lib
             -DCMAKE_INSTALL_PREFIX:PATH=${SDK_INSTALL_PREFIX}
 )
+ExternalProject_Add(
+        Libpng_project
+        GIT_REPOSITORY https://github.com/sim82/libpng.git
+        GIT_TAG master
+
+        CMAKE_ARGS
+            -DCMAKE_BUILD_TYPE=$<CONFIG>
+            -DBUILD_SHARED_LIBS=${BUILD_SHARED_LIBS}
+            -DCMAKE_INSTALL_RPATH=${SDK_INSTALL_PREFIX}/lib
+            -DCMAKE_INSTALL_PREFIX:PATH=${SDK_INSTALL_PREFIX}
+)
+ExternalProject_Add(
+        Freetype_project
+        GIT_REPOSITORY https://github.com/sim82/freetype2.git
+        GIT_TAG master
+
+        CMAKE_ARGS
+            -DCMAKE_BUILD_TYPE=$<CONFIG>
+            -DBUILD_SHARED_LIBS=${BUILD_SHARED_LIBS}
+            -DCMAKE_INSTALL_RPATH=${SDK_INSTALL_PREFIX}/lib
+            -DCMAKE_INSTALL_PREFIX:PATH=${SDK_INSTALL_PREFIX}
+)
+ExternalProject_Add(
+        Turbojpeg_project
+        GIT_REPOSITORY https://github.com/sim82/libjpeg-turbo.git
+        GIT_TAG master
+
+        CMAKE_ARGS
+            -DCMAKE_BUILD_TYPE=$<CONFIG>
+            -DBUILD_SHARED_LIBS=${BUILD_SHARED_LIBS}
+            -DCMAKE_INSTALL_RPATH=${SDK_INSTALL_PREFIX}/lib
+            -DCMAKE_INSTALL_PREFIX:PATH=${SDK_INSTALL_PREFIX}
+)
 
 ExternalProject_Add(
         CapNProto_project
