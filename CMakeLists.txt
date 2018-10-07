@@ -11,7 +11,18 @@ ExternalProject_Add(
         CMAKE_ARGS
             -DCMAKE_BUILD_TYPE=$<CONFIG>
             -DBUILD_SHARED_LIBS=${BUILD_SHARED_LIBS}
-            -DCMAKE_INSTALL_RPATH=${SDK_INSTALL_PREFIX}/lib
+            -DCMAKE_INSTALL_RPATH=${SDK_INSTALL_PREFIX}/lib64
+            -DCMAKE_INSTALL_PREFIX:PATH=${SDK_INSTALL_PREFIX}
+)
+ExternalProject_Add(
+        Zlib_project
+        GIT_REPOSITORY https://github.com/sim82/zlib.git
+        GIT_TAG master
+
+        CMAKE_ARGS
+            -DCMAKE_BUILD_TYPE=$<CONFIG>
+            -DBUILD_SHARED_LIBS=${BUILD_SHARED_LIBS}
+            -DCMAKE_INSTALL_RPATH=${SDK_INSTALL_PREFIX}/lib64
             -DCMAKE_INSTALL_PREFIX:PATH=${SDK_INSTALL_PREFIX}
 )
 ExternalProject_Add(
@@ -22,7 +33,7 @@ ExternalProject_Add(
         CMAKE_ARGS
             -DCMAKE_BUILD_TYPE=$<CONFIG>
             -DBUILD_SHARED_LIBS=${BUILD_SHARED_LIBS}
-            -DCMAKE_INSTALL_RPATH=${SDK_INSTALL_PREFIX}/lib
+            -DCMAKE_INSTALL_RPATH=${SDK_INSTALL_PREFIX}/lib64
             -DCMAKE_INSTALL_PREFIX:PATH=${SDK_INSTALL_PREFIX}
 )
 ExternalProject_Add(
@@ -33,7 +44,7 @@ ExternalProject_Add(
         CMAKE_ARGS
             -DCMAKE_BUILD_TYPE=$<CONFIG>
             -DBUILD_SHARED_LIBS=${BUILD_SHARED_LIBS}
-            -DCMAKE_INSTALL_RPATH=${SDK_INSTALL_PREFIX}/lib
+            -DCMAKE_INSTALL_RPATH=${SDK_INSTALL_PREFIX}/lib64
             -DCMAKE_INSTALL_PREFIX:PATH=${SDK_INSTALL_PREFIX}
 )
 ExternalProject_Add(
@@ -44,7 +55,7 @@ ExternalProject_Add(
         CMAKE_ARGS
             -DCMAKE_BUILD_TYPE=$<CONFIG>
             -DBUILD_SHARED_LIBS=${BUILD_SHARED_LIBS}
-            -DCMAKE_INSTALL_RPATH=${SDK_INSTALL_PREFIX}/lib
+            -DCMAKE_INSTALL_RPATH=${SDK_INSTALL_PREFIX}/lib64
             -DCMAKE_INSTALL_PREFIX:PATH=${SDK_INSTALL_PREFIX}
 )
 
